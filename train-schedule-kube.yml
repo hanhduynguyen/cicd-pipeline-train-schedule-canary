@@ -32,7 +32,7 @@ spec:
         track: stable
     spec:
       containers:
-      - name: train-schedule-container
+      - name: train-schedule
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
         - containerPort: 31000
