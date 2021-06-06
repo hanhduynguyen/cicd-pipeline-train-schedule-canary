@@ -8,8 +8,8 @@ spec:
     app: train-schedule
   ports:
   - protocol: TCP
-    port: 21000
-    nodePort: 21000
+    port: 31000
+    nodePort: 31000
 
 ---
 
@@ -32,14 +32,14 @@ spec:
         track: stable
     spec:
       containers:
-      - name: train-schedule
+      - name: train-schedule-container
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
-        - containerPort: 21000
+        - containerPort: 31000
         livenessProbe:
           httpGet:
             path: /
-            port: 21000
+            port: 31000
           initialDelaySeconds: 15
           timeoutSeconds: 1
           periodSeconds: 10
